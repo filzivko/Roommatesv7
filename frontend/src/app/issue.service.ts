@@ -28,16 +28,31 @@ export class IssueService {
     return this.http.post(`${this.uri}/issues/add`, issue);
   }
 
-  updateIssue(id, title, responsible, description, severity, status) {
+  updateIssue(id) {
     const issue = {
-      title: title,
-      responsible: responsible,
-      description: description,
-      severity: severity,
-      status: status,
+      title: "Asdfsdcvxcvcvnew",
+      responsible: "responsible",
+      description: 'description',
+      severity: 'severity',
+      status: 'status',
     };
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
   }
+
+  // updateIssueSec(id, title, responsible, description, severity, status) {
+  //   const issue = {
+  //     title: title,
+  //     responsible: responsible,
+  //     description: description,
+  //     severity: severity,
+  //     status: status,
+  //   };
+  //   return this.http.post(`${this.uri}/status/update/${id}`, issue);
+  // }
+
+
+
+
 
   deleteIssue(id) {
     return this.http.get(`${this.uri}/issues/delete/${id}`);

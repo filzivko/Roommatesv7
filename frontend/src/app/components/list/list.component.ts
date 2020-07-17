@@ -31,10 +31,6 @@ export class ListComponent implements OnInit {
       });
   }
 
-  sayit(){
-    console.log("sdfsf");
-  }
-
 
   editIssue(id){
     this.router.navigate([`/edit/${id}`]);

@@ -43,13 +43,12 @@ export class EditComponent implements OnInit {
         this.updateForm.get('responsible').setValue(this.issue.responsible);
         this.updateForm.get('description').setValue(this.issue.description);
         this.updateForm.get('status').setValue(this.issue.status);
-
       });
     });
   }
 
-  updateIssue(title, responsible, description, severity, status){
-    this.issueService.updateIssue(this.id, title, responsible, description, severity, status).subscribe(() => {
+  updateIssue(){
+    this.issueService.updateIssue(this.id).subscribe(() => {
       this.snackBar.open('Issue updated successfully', 'OK', {
         duration: 3000
       });
