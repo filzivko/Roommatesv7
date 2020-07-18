@@ -32,8 +32,6 @@ export class EditComponent implements OnInit {
     });
   }
 
-
-
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params.id;
@@ -47,8 +45,8 @@ export class EditComponent implements OnInit {
     });
   }
 
-  updateIssue(){
-    this.issueService.updateIssue(this.id).subscribe(() => {
+  updateIssue(title, responsible, description, severity, status){
+    this.issueService.updateIssue(this.id, title, responsible, description, severity, status).subscribe(() => {
       this.snackBar.open('Issue updated successfully', 'OK', {
         duration: 3000
       });

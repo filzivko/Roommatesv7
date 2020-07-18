@@ -10,7 +10,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/issues');
+mongoose.connect('mongodb://localhost:27017/issues', {useNewUrlParser: true});
 
 const connection = mongoose.connection;
 
@@ -48,12 +48,13 @@ router.route('/issues/add').post((req, res) => {
 });
 
 router.route('/issues/update/:id').post((req, res) => {
-    Issue.findById(req.params.id, (err, issue) => {
+    Issue.findById(req.body.id, (err, issue) => {
         if (!issue)
             return next(new Error('Could not load document'));
         else {
             issue.title = req.body.title;
             issue.responsible = req.body.responsible;
+            issue.description = req.body.description;
             issue.severity = req.body.severity;
             issue.status = req.body.status;
             issue.save().then(issue => {
@@ -64,24 +65,6 @@ router.route('/issues/update/:id').post((req, res) => {
         }
     });
 });
-
-// router.route('/status/update/:id').post((req, res) => {
-//     Issue.findById(req.params.id, (err, issue) => {
-//         if (!issue)
-//             return next(new Error('Could not load document'));
-//         else {
-//             issue.title = req.body.title;
-//             issue.responsible = req.body.responsible;
-//             issue.severity = req.body.severity;
-//             issue.status = req.body.status;
-//             issue.save().then(issue => {
-//                 res.json('Update done');
-//             }).catch(err => {
-//                 res.status(400).send('Update failed');
-//             });
-//         }
-//     });
-// });
 
 router.route('/issues/delete/:id').get((req, res) => {
     Issue.findByIdAndRemove({_id: req.params.id}, (err, issue) => {
@@ -94,6 +77,7 @@ router.route('/issues/delete/:id').get((req, res) => {
 
 app.use('/', router);
 
+const porty = process.env.PORT || 4000;
 
-app.listen(4000, () => console.log('expresss server running on port 4000'));
+app.listen(porty, () => console.log('expresss server running on port: ' + porty));
 

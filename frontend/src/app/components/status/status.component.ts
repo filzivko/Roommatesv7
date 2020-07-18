@@ -5,6 +5,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Issue } from '../../issue.model';
 import { IssueService } from '../../issue.service';
+import { ThrowStmt } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-status',
@@ -44,6 +46,10 @@ export class StatusComponent implements OnInit {
         this.updateForm.get('status').setValue(this.issue.status);
       });
     });
+
+    // if(this.issue[0].title=1){
+    //   document.getElementById("hannah").classList.add('on');
+    // }
   }
 
   fetchIssues(){
@@ -51,40 +57,41 @@ export class StatusComponent implements OnInit {
       .getIssues()
       .subscribe((data: Issue[]) => {
         this.issues = data;
-        console.log('data requested');
-        console.log(this.issues);
+        // console.log('data requested');
+        // console.log(this.issues);
+        if(this.issues[0].title == "1"){ document.getElementById("steph1").classList.add('on');}
+        if(this.issues[0].responsible == "1"){ document.getElementById("steph2").classList.add('on');}
+        if(this.issues[0].description == "1"){ document.getElementById("steph3").classList.add('on');}
+        if(this.issues[1].title == "1"){ document.getElementById("jacob1").classList.add('on');}
+        if(this.issues[1].responsible == "1"){ document.getElementById("jacob2").classList.add('on');}
+        if(this.issues[1].description == "1"){ document.getElementById("jacob3").classList.add('on');}
+        if(this.issues[2].title == "1"){ document.getElementById("hannah1").classList.add('on');}
+        if(this.issues[2].responsible == "1"){ document.getElementById("hannah2").classList.add('on');}
+        if(this.issues[2].description == "1"){ document.getElementById("hannah3").classList.add('on');}
+        if(this.issues[3].title == "1"){ document.getElementById("lachy1").classList.add('on');}
+        if(this.issues[3].responsible == "1"){ document.getElementById("lachy2").classList.add('on');}
+        if(this.issues[3].description == "1"){ document.getElementById("lachy3").classList.add('on');}
+        if(this.issues[4].title == "1"){ document.getElementById("milly1").classList.add('on');}
+        if(this.issues[4].responsible == "1"){ document.getElementById("milly2").classList.add('on');}
+        if(this.issues[4].description == "1"){ document.getElementById("milly3").classList.add('on');}
+        if(this.issues[5].title == "1"){ document.getElementById("fil1").classList.add('on');}
+        if(this.issues[5].responsible == "1"){ document.getElementById("fil2").classList.add('on');}
+        if(this.issues[5].description == "1"){ document.getElementById("fil3").classList.add('on');}
+
+        // console.log(this.issues[0]);
+        // document.getElementById("hannah2").classList.add('on');
       });
   }
-  hanIn(){
-    console.log("Hannahs In");
-    // this.updateIssueSec("yes", "please", "work", "cmon", "plz");
-  }
 
-  hanOut(){
-    console.log("Hannahs Out");
-  }
-  hanHome(){
-    console.log("Hannahs Home");
-  }
 
-  // updateIssueSec(title, responsible, description, severity, status){
-  //   this.issueService.updateIssue(this.id, title, responsible, description, severity, status).subscribe(() => {
-  //     this.snackBar.open('Issue updated successfully', 'OK', {
-  //       duration: 3000
-  //     });
-  //   });
-  // }
-
-  updateIssueSec(){
-    this.issueService.updateIssue(this.id).subscribe(() => {
-      this.snackBar.open('Issue updated successfully', 'OK', {
-        duration: 3000
+  updateIssueSec(id, title, responsible, description, severity, status){
+    this.issueService.updateIssue(id, title, responsible, description, severity, status).subscribe(() => {
+      // this.snackBar.open('Issue updated successfully', 'OK', {
+      //   duration: 10000000
       });
       location.reload();
-    });
-  }
+    };
 
-
-
-
+        // if(this.issue.title=="1"){
+        // document.getElementById("hannah").classList.add('on');}
 }

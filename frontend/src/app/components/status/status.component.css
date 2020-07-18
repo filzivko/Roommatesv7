@@ -1,0 +1,73 @@
+body{
+  background-color:black;
+}
+
+.iconic{
+  width: 50px;
+}
+
+.row{
+  width: 100%;
+  height: 100%;
+  margin-left: 200px;
+  margin-right: 200px;
+  text-align: center;
+}
+
+.table{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.titles{
+  text-align: center;
+
+  margin-left: 20px ;
+  margin-right: 20px ;
+}
+
+.faces{
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: pink;
+  margin: 10px;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  display: inline-block;
+  opacity: 10%;
+  border-radius: 50%;
+}
+
+.hannah{
+  background-image: url(https://i.imgur.com/yaumRZo.jpg);
+}
+
+.lachy{
+  background-image: url(https://i.imgur.com/bwqNyNm.jpg);
+}
+
+.jacob{
+  background-image: url(https://i.imgur.com/kkuIVpL.jpg);
+}
+
+.steph{
+  background-image: url(https://i.imgur.com/v0X7Grh.jpg);
+}
+
+.milly{
+  background-image: url(https://i.imgur.com/3zqsmvN.jpg);
+}
+
+.fil{
+  background-image: url(https://i.imgur.com/TsedCl8.jpg);
+}
+
+
+.on{
+  opacity: 100%;
+
+  border: 5px solid #41ba00;
+}

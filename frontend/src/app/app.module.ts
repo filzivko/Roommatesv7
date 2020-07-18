@@ -31,7 +31,7 @@ const routes: Routes = [
       { path: 'edit/:id', component: EditComponent},
       { path: 'list', component: ListComponent},
       { path: 'status', component: StatusComponent},
-      { path: '', redirectTo: 'list', pathMatch: 'full'}
+      { path: '', redirectTo: 'status', pathMatch: 'full'}
 ];
 
 @NgModule({

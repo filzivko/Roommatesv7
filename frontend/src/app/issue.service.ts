@@ -28,13 +28,14 @@ export class IssueService {
     return this.http.post(`${this.uri}/issues/add`, issue);
   }
 
-  updateIssue(id) {
+  updateIssue(id, title, responsible, description, severity, status) {
     const issue = {
-      title: "Asdfsdcvxcvcvnew",
-      responsible: "responsible",
-      description: 'description',
-      severity: 'severity',
-      status: 'status',
+      id: id,
+      title: title,
+      responsible: responsible,
+      description: description,
+      severity: severity,
+      status: status
     };
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
   }

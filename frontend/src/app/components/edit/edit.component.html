@@ -1,5 +1,9 @@
-<!--
-<button type="submit" (click)="updateIssue("yes", "please", "work", "cmon", "plz")" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">create predefined</button> -->
+
+
+
+
+
+<button  type="submit" (click)="updateIssue('this.value', 'this.value', 'this.value', 'this.value','this.value')" >CHANGE</button>
 
 <div>
   <br>
@@ -11,6 +15,7 @@
     <br>
     <form [formGroup]="updateForm" class="edit-form">
       <mat-form-field class="field-full-width">
+
         <input matInput placeholder="title" formControlName="title" #title>
       </mat-form-field>
       <mat-form-field class="field-full-width">
@@ -36,9 +41,9 @@
       <mat-divider></mat-divider>
       <br><br>
       <button mat-raised-button color="ascent" routerLink="/list">Back</button>&nbsp;
-      <button type="submit" (click)="updateIssue()" >Save</button>
+      <!-- <button type="submit" (click)="updateIssue()" >Save</button> -->
 
-      <!-- <button type="submit" (click)="updateIssue(title.value, responsible.value, description.value, severity.value, status.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button> -->
+      <button type="submit" (click)="updateIssue(title.value, responsible.value, description.value, severity.value, status.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
     </form>
   </mat-card>
 </div>
