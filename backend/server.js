@@ -10,13 +10,14 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/issues', {useNewUrlParser: true});
+mongoose.connect('mongodb://fil:data123@ds263068.mlab.com:63068/roommatesvd', {useNewUrlParser: true, useUnifiedTopology: true} );
 
 const connection = mongoose.connection;
 
 connection.once('open', () => {
     console.log('MongoDB connected successfully!');
 });
+
 
 router.route('/issues').get((req, res) => {
     Issue.find((err, issues) => {

@@ -68,12 +68,15 @@ export class StatusComponent implements OnInit {
         if(this.issues[2].title == "1"){ document.getElementById("hannah1").classList.add('on');}
         if(this.issues[2].responsible == "1"){ document.getElementById("hannah2").classList.add('on');}
         if(this.issues[2].description == "1"){ document.getElementById("hannah3").classList.add('on');}
-        if(this.issues[3].title == "1"){ document.getElementById("lachy1").classList.add('on');}
-        if(this.issues[3].responsible == "1"){ document.getElementById("lachy2").classList.add('on');}
-        if(this.issues[3].description == "1"){ document.getElementById("lachy3").classList.add('on');}
-        if(this.issues[4].title == "1"){ document.getElementById("milly1").classList.add('on');}
-        if(this.issues[4].responsible == "1"){ document.getElementById("milly2").classList.add('on');}
-        if(this.issues[4].description == "1"){ document.getElementById("milly3").classList.add('on');}
+        if(this.issues[3].title == "1"){ document.getElementById("milly1").classList.add('on');}
+        if(this.issues[3].responsible == "1"){ document.getElementById("milly2").classList.add('on');}
+        if(this.issues[3].description == "1"){ document.getElementById("milly3").classList.add('on');}
+
+        if(this.issues[4].title == "1"){ document.getElementById("lachy1").classList.add('on');}
+        if(this.issues[4].responsible == "1"){ document.getElementById("lachy2").classList.add('on');}
+        if(this.issues[4].description == "1"){ document.getElementById("lachy3").classList.add('on');}
+
+
         if(this.issues[5].title == "1"){ document.getElementById("fil1").classList.add('on');}
         if(this.issues[5].responsible == "1"){ document.getElementById("fil2").classList.add('on');}
         if(this.issues[5].description == "1"){ document.getElementById("fil3").classList.add('on');}
