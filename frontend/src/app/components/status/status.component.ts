@@ -37,8 +37,8 @@ export class StatusComponent implements OnInit {
   ngOnInit(): void {
     this.fetchIssues();
     this.route.params.subscribe(params => {
-      this.id = "5f0f1a6961af05fedde9babf";
-      this.issueService.getIssueById("5f0f1a6961af05fedde9babf").subscribe(res => {
+      this.id = "5f142cf1a44ec34558905656";
+      this.issueService.getIssueById("5f142cf1a44ec34558905656").subscribe(res => {
         this.issue = res;
         this.updateForm.get('title').setValue(this.issue.title);
         this.updateForm.get('responsible').setValue(this.issue.responsible);
@@ -57,8 +57,8 @@ export class StatusComponent implements OnInit {
       .getIssues()
       .subscribe((data: Issue[]) => {
         this.issues = data;
-        // console.log('data requested');
-        // console.log(this.issues);
+        console.log('data requested');
+        console.log(this.issues);
         if(this.issues[0].title == "1"){ document.getElementById("steph1").classList.add('on');}
         if(this.issues[0].responsible == "1"){ document.getElementById("steph2").classList.add('on');}
         if(this.issues[0].description == "1"){ document.getElementById("steph3").classList.add('on');}

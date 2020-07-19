@@ -6,9 +6,51 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IssueService {
 
-  uri = 'http://localhost:4000';
+  // uri = 'http://localhost:4000';
+  uri = 'https://secret-fjord-57166.herokuapp.com';
+  // uri = process.env.PORT;
 
   constructor(private http: HttpClient) { }
+
+
+// // without URI
+//   getIssues() {
+//     return this.http.get(`issues`);
+//   }
+
+//   getIssueById(id) {
+//     return this.http.get(`issues/${id}`);
+//   }
+
+//   addIssue(title, responsible, description, severity) {
+//     const issue = {
+//       title: title,
+//       responsible: responsible,
+//       description: description,
+//       severity: severity
+//     };
+//     return this.http.post(`issues/add`, issue);
+//   }
+
+//   updateIssue(id, title, responsible, description, severity, status) {
+//     const issue = {
+//       id: id,
+//       title: title,
+//       responsible: responsible,
+//       description: description,
+//       severity: severity,
+//       status: status
+//     };
+//     return this.http.post(`issues/update/${id}`, issue);
+//   }
+
+//   deleteIssue(id) {
+//     return this.http.get(`issues/delete/${id}`);
+//   }
+
+
+
+// with URI
 
   getIssues() {
     return this.http.get(`${this.uri}/issues`);
@@ -39,21 +81,6 @@ export class IssueService {
     };
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
   }
-
-  // updateIssueSec(id, title, responsible, description, severity, status) {
-  //   const issue = {
-  //     title: title,
-  //     responsible: responsible,
-  //     description: description,
-  //     severity: severity,
-  //     status: status,
-  //   };
-  //   return this.http.post(`${this.uri}/status/update/${id}`, issue);
-  // }
-
-
-
-
 
   deleteIssue(id) {
     return this.http.get(`${this.uri}/issues/delete/${id}`);

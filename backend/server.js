@@ -3,6 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Issue from './models/Issue';
+var path = require('path');
 
 const app = express();
 const router = express.Router();
@@ -17,6 +18,13 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB connected successfully!');
 });
+
+
+// app.use(express.static(path.join(__dirname,'public')));
+
+// app.get('*', (req, res)=>{
+//     res.sendFile(path.join(__dirname,'public/index.html'));
+// })
 
 
 router.route('/issues').get((req, res) => {
@@ -80,5 +88,7 @@ app.use('/', router);
 
 const porty = process.env.PORT || 4000;
 
-app.listen(porty, () => console.log('expresss server running on port: ' + porty));
+app.listen(porty, process.env.IP);
+
+// app.listen(porty, () => console.log('expresss server running on port: ' + porty));
 
