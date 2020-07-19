@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IssueService {
 
-  // uri = 'http://localhost:4000';
-  uri = 'https://secret-fjord-57166.herokuapp.com';
-  // uri = process.env.PORT;
+  uri = 'http://localhost:4000';
+
+  // uri = process.env.IP;
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class IssueService {
 //   }
 
 //   getIssueById(id) {
-//     return this.http.get(`issues/${id}`);
+//     return this.http.get(`/issues/${id}`);
 //   }
 
 //   addIssue(title, responsible, description, severity) {
@@ -29,7 +29,7 @@ export class IssueService {
 //       description: description,
 //       severity: severity
 //     };
-//     return this.http.post(`issues/add`, issue);
+//     return this.http.post(`/issues/add`, issue);
 //   }
 
 //   updateIssue(id, title, responsible, description, severity, status) {
@@ -41,11 +41,11 @@ export class IssueService {
 //       severity: severity,
 //       status: status
 //     };
-//     return this.http.post(`issues/update/${id}`, issue);
+//     return this.http.post(`/issues/update/${id}`, issue);
 //   }
 
 //   deleteIssue(id) {
-//     return this.http.get(`issues/delete/${id}`);
+//     return this.http.get(`/issues/delete/${id}`);
 //   }
 
 

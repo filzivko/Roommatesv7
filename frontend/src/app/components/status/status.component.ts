@@ -62,12 +62,15 @@ export class StatusComponent implements OnInit {
         if(this.issues[0].title == "1"){ document.getElementById("steph1").classList.add('on');}
         if(this.issues[0].responsible == "1"){ document.getElementById("steph2").classList.add('on');}
         if(this.issues[0].description == "1"){ document.getElementById("steph3").classList.add('on');}
+
         if(this.issues[1].title == "1"){ document.getElementById("jacob1").classList.add('on');}
         if(this.issues[1].responsible == "1"){ document.getElementById("jacob2").classList.add('on');}
         if(this.issues[1].description == "1"){ document.getElementById("jacob3").classList.add('on');}
+
         if(this.issues[2].title == "1"){ document.getElementById("hannah1").classList.add('on');}
         if(this.issues[2].responsible == "1"){ document.getElementById("hannah2").classList.add('on');}
         if(this.issues[2].description == "1"){ document.getElementById("hannah3").classList.add('on');}
+
         if(this.issues[3].title == "1"){ document.getElementById("milly1").classList.add('on');}
         if(this.issues[3].responsible == "1"){ document.getElementById("milly2").classList.add('on');}
         if(this.issues[3].description == "1"){ document.getElementById("milly3").classList.add('on');}
@@ -85,7 +88,6 @@ export class StatusComponent implements OnInit {
         // document.getElementById("hannah2").classList.add('on');
       });
   }
-
 
   updateIssueSec(id, title, responsible, description, severity, status){
     this.issueService.updateIssue(id, title, responsible, description, severity, status).subscribe(() => {
