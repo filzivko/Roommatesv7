@@ -11,7 +11,9 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://fil:data123@ds263068.mlab.com:63068/roommatesvd', {useNewUrlParser: true, useUnifiedTopology: true} );
+// mongoose.connect('mongodb://fil:data123@ds263068.mlab.com:63068/roommatesvd', {useNewUrlParser: true, useUnifiedTopology: true} );
+mongoose.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true} );
+
 
 const connection = mongoose.connection;
 
